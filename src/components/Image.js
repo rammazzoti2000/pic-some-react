@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { bool, number, string } from 'prop-types';
 
 import { Context } from '../context/Context'
 
@@ -37,7 +37,11 @@ Image.defaultProps = {
 };
 
 Image.propTypes = {
-  img: PropTypes.shape().isRequired,
+  img: PropTypes.shape({
+    id: PropTypes.string,
+    url: PropTypes.string,
+    isFavorite: PropTypes.bool
+  }).isRequired,
   className: PropTypes.string,
 };
 

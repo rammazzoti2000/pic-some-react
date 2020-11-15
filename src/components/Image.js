@@ -1,9 +1,16 @@
-import React from 'react';
+/* eslint-disable */
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 function Image({ className, img }) {
+  const [hovered, setHovered] = useState(false);
+  console.log(hovered)
   return (
-    <div className={`${className} image-container`}>
+    <div
+      className={`${className} image-container`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <img src={img.url} className="image-grid" alt="alt" />
     </div>
   );

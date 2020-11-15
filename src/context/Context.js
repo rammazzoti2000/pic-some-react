@@ -33,10 +33,10 @@ function ContextProvider({ children }) {
     setCartItems(prevState => [...prevState, newItem]);
   }
 
-  console.log(cartItems)
+  // console.log(cartItems)
 
   return (
-    <Context.Provider value={{ allPhotos, toggleFavorite, addToCart }}>
+    <Context.Provider value={{ allPhotos, toggleFavorite, addToCart, cartItems }}>
       {children}
     </Context.Provider>
   );

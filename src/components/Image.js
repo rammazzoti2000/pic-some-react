@@ -6,7 +6,7 @@ import { Context } from '../context/Context'
 
 function Image({ className, img }) {
   const [hovered, setHovered] = useState(false);
-  const { toggleFavorite } = useContext(Context);
+  const { toggleFavorite, addToCart } = useContext(Context);
 
   // const heartIcon = hovered && <i className="ri-heart-line favorite" onClick={() => toggleFavorite(img.id)} />
   function heartIcon() {
@@ -15,9 +15,9 @@ function Image({ className, img }) {
     } else if(hovered) {
         return <i className="ri-heart-line favorite" onClick={() => toggleFavorite(img.id)}></i>
     }
-}
+  }
 
-  const cartIcon = hovered && <i className="ri-add-circle-line cart" />
+  const cartIcon = hovered && <i className="ri-add-circle-line cart" onClick={() => addToCart(img)} />
 
   return (
     <div

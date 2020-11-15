@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -19,8 +17,6 @@ function ContextProvider({ children }) {
   function toggleFavorite(id) {
     const updatedArr = allPhotos.map(photo => {
       if (photo.id === id) {
-        // console.log(id)
-        // console.log(!photo.isFavorite)
         return { ...photo, isFavorite: !photo.isFavorite };
       }
       return photo;
@@ -33,10 +29,17 @@ function ContextProvider({ children }) {
     setCartItems(prevState => [...prevState, newItem]);
   }
 
-  // console.log(cartItems)
+  function removeFromCart(id) {
+    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
+  }
+
+  console.log(cartItems);
 
   return (
-    <Context.Provider value={{ allPhotos, toggleFavorite, addToCart, cartItems }}>
+    <Context.Provider value={{
+      allPhotos, toggleFavorite, cartItems, addToCart, removeFromCart,
+    }}
+    >
       {children}
     </Context.Provider>
   );

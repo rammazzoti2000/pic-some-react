@@ -23,7 +23,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/rammazzoti2000/pic-some">
-    <img src="src/readmePics/microverse.png" alt="Logo" width="80" height="80">
+    <img src="src/readmePics/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Advanced ReactJs --> [PicSome App]</h3>

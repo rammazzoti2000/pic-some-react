@@ -33,8 +33,6 @@ function ContextProvider({ children }) {
     setCartItems(prevItems => prevItems.filter(item => item.id !== id));
   }
 
-  console.log(cartItems);
-
   return (
     <Context.Provider value={{
       allPhotos, toggleFavorite, cartItems, addToCart, removeFromCart,

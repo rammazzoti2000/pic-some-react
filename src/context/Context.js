@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from 'react';
+// import { reactLocalStorage } from 'reactjs-localstorage';
 import PropTypes from 'prop-types';
 
 const Context = React.createContext();
 
 function ContextProvider({ children }) {
+  const initialValue = window.localStorage.getItem('cartItems') || [];
+
   const [allPhotos, setAllPhotos] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+
+  // const state = { name: 'zak' };
+  // const stateString = JSON.stringify(state);
+  // localStorage.setItem('my_saved_state', stateString);
+  //
+  // const returnedStateString = localStorage.getItem('my_saved_state');
+  // const returnedStateObject = JSON.parse(returnedStateString);
+  //
+  // console.log('stringified object: ', returnedStateString);
+  // console.log('parse object: ', returnedStateObject);
+  // console.log(state);
 
   const url = 'https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json';
   useEffect(() => {

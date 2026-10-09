@@ -1,18 +1,9 @@
-@use 'variables' as *;
-@use 'fonts' as *;
-
-:root {
-  --black: #{$black};
-  --red: #{$red};
-  --pink: #{$pink};
-  --light-blue: #{$light-blue};
-  --blue: #{$blue};
-  --light-gray: #{$light-gray};
-}
+@use 'variables';
+@use 'fonts';
 
 html,
 body {
-  font-family: $font-primary;
+  font-family: var(--font-primary);
   margin: 0;
   padding: 0;
 }

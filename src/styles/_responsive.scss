@@ -1,0 +1,29 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'extraSmall': '(max-width: 500px)',
+  'extraMediumSmall': '(max-width: 580px)',
+  'smallOnly': '(max-width: 779px)',
+  'mediumSmallUpOnly': '(min-width: 590px) and (max-width: 1000px)',
+  'mediumOnly': '(min-width: 780px) and (max-width: 1199px)',
+  'extraSmallUp': '(min-width: 442px)',
+  'smallUp': '(min-width: 560px)',
+  'mediumSmallUp': '(min-width: 600px)',
+  'mediumUp': '(min-width: 780px)',
+  'extraMediumUp': '(min-width: 1000px)',
+  'largeUp': '(min-width: 1200px)',
+  'largeUpPlus': '(min-width: 1240px)',
+  'extraLargeUp': '(min-width: 1300px)',
+);
+
+@mixin device($breakpoint) {
+  $media-query: map.get($breakpoints, $breakpoint);
+
+  @if $media-query {
+    @media only screen and #{$media-query} {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint `#{$breakpoint}` not found in map.";
+  }
+}

@@ -23,7 +23,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/rammazzoti2000/pic-some">
-    <img src="src/readmePics/logo.png" alt="Logo" width="220" height="220">
+    <img src="public/images/readme/logo.png" alt="Logo" width="220" height="220">
   </a>
 
   <h3 align="center">Advanced ReactJs --> [PicSome App]</h3>
@@ -58,24 +58,40 @@ From a technical point of view, to build this project I made use of React Router
 
 ###
   
-![screenshot](src/readmePics/screenshot.png)
+![screenshot](public/images/readme/screenshot.png)
 
 ### Built With
 This project was built using these technologies.
-* HTML/CSS
-* ReactJs
+* React 19 + TypeScript
+* Vite
 * React Router
-* PropTypes
-* React Hooks and Custom Hooks
-* React Context
-* Heroku Buildpack
-* npm
-* ES6
-* Node.js
-* ESLint
-* StyleLint
-* GithubActions :muscle:
-* Atom :atom:
+* React Context and custom hooks
+* Vitest + Testing Library
+* ESLint (flat config, typescript-eslint)
+* SCSS + Stylelint
+* GitHub Actions :muscle:
+
+### Project Structure
+Code is organised by feature. Each feature owns its components, hooks, types, constants and utils:
+
+```
+src/
+  main.tsx                 # entry point
+  app.tsx                  # routes
+  styles/                  # _variables, _fonts, _global, _responsive (+ index.scss entry)
+  data/                    # static JSON (photos.json)
+  shared/hooks/            # hooks used by more than one feature (use-hover)
+  features/
+    <feature>/
+      <feature>.tsx        # feature component
+      <feature>.scss       # feature styles
+      hooks/               # feature hooks
+      utils/
+        types.ts
+        constants.ts
+        utils.ts
+public/images/             # images, icons, logos
+```
 
 <!-- INSTALLATION -->
 ## Usage
@@ -95,19 +111,17 @@ To have this app on your pc, you need to:
 
   - `$ npm install` - installs all the dependencies required by the project
 
-  - `$ npm start` - runs the app in the development mode:
-    - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-    - The page will reload if you make edits.
-    - You will also see any lint errors in the console.
+  - `$ npm run dev` (or `npm start`) - runs the app in development mode at [http://localhost:5173](http://localhost:5173)
+  - `$ npm run build` - type-checks and builds the app for production into `dist/`
+  - `$ npm run preview` - serves the production build locally
+  - `$ npm run lint` / `$ npm run lint:css` - runs ESLint / Stylelint
+  - `$ npm run typecheck` - runs the TypeScript compiler
 
-  - `$ npm run build`
-    - Builds the app for production to the `build` folder.
-    - It correctly bundles React in production mode and optimizes the build for the best performance.
-    - The build is minified and the filenames include the hashes.
-    - Your app is ready to be deployed!
+  Requires Node.js 22+.
 
 ## Automated Test
- > to be added
+  - `$ npm test` - runs Vitest in watch mode
+  - `$ npm run test:run` - runs the test suite once
 
 ## Live Demo & Deployment
 The project has been deployed with [Heroku Buildpack for create-react-app](https://github.com/mars/create-react-app-buildpack#user-content-requires)

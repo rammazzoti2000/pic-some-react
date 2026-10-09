@@ -1,0 +1,9 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--pink);
+  color: var(--light-blue);
+  padding: 0 10px;
+  box-shadow: 0 2px 10px -5px var(--black);
+}

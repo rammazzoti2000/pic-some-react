@@ -1,0 +1,28 @@
+@use 'variables' as *;
+@use 'fonts' as *;
+
+:root {
+  --black: #{$black};
+  --red: #{$red};
+  --pink: #{$pink};
+  --light-blue: #{$light-blue};
+  --blue: #{$blue};
+  --light-gray: #{$light-gray};
+}
+
+html,
+body {
+  font-family: $font-primary;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited,
+  &:hover,
+  &:active {
+    color: var(--light-blue);
+  }
+}

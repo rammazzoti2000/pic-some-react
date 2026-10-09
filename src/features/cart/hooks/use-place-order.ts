@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ORDER_BUTTON_TEXT, ORDER_DELAY_MS } from '../utils/constants';
+import { ORDER_BUTTON_TEXT, ORDER_DELAY_MS } from '@/features/cart/utils/constants';
 
 export const usePlaceOrder = (onComplete: () => void) => {
   const [buttonText, setButtonText] = useState<string>(ORDER_BUTTON_TEXT.idle);

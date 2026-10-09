@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useState, type ReactNode } from 'react';
 import photosData from '@/data/photos.json';
-import { StoreContext } from './store-context';
-import { removeById, toggleFavoriteById } from './utils/utils';
-import type { Photo, StoreValue } from './utils/types';
+import { StoreContext } from '@/features/store/store-context';
+import { removeById, toggleFavoriteById } from '@/features/store/utils/utils';
+import type { Photo, StoreValue } from '@/features/store/utils/types';
 
 type StoreProviderProps = {
   children: ReactNode;

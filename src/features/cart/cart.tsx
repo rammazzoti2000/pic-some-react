@@ -1,9 +1,9 @@
 import { useStore } from '@/features/store/hooks/use-store';
-import { CartItem } from './cart-item';
-import { usePlaceOrder } from './hooks/use-place-order';
-import { ITEM_PRICE } from './utils/constants';
-import { formatPrice } from './utils/utils';
-import './cart.scss';
+import { CartItem } from '@/features/cart/cart-item';
+import { usePlaceOrder } from '@/features/cart/hooks/use-place-order';
+import { ITEM_PRICE } from '@/features/cart/utils/constants';
+import { formatPrice } from '@/features/cart/utils/utils';
+import styles from '@/features/cart/cart.module.scss';
 
 export const Cart = () => {
   const { cartItems, emptyCart } = useStore();
@@ -20,15 +20,15 @@ export const Cart = () => {
     : <p>You have no items in your cart.</p>;
 
   return (
-    <main className="cart-page">
+    <main className={styles.cartPage}>
       <h1>Check out</h1>
       {cartItemElements}
-      <p className="total-cost">
+      <p className={styles.totalCost}>
         Total:
         {' '}
         {totalCost}
       </p>
-      <div className="order-button">
+      <div className={styles.orderButton}>
         {showOrderButton}
       </div>
     </main>

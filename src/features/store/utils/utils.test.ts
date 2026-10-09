@@ -1,5 +1,5 @@
-import { removeById, toggleFavoriteById } from './utils';
-import type { Photo } from './types';
+import { removeById, toggleFavoriteById } from '@/features/store/utils/utils';
+import type { Photo } from '@/features/store/utils/types';
 
 const photos: Photo[] = [
   { id: '1', url: 'a.jpg', isFavorite: false },

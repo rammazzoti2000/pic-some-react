@@ -21,6 +21,9 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       'func-style': ['error', 'expression'],
       'prefer-arrow-callback': 'error',
+      'no-restricted-imports': ['error', {
+        patterns: [{ group: ['./*', '../*'], message: 'Use the @/ alias instead of relative imports.' }],
+      }],
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   },

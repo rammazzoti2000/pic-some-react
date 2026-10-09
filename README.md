@@ -78,13 +78,13 @@ Code is organised by feature. Each feature owns its components, hooks, types, co
 src/
   main.tsx                 # entry point
   app.tsx                  # routes
-  styles/                  # _variables, _fonts, _global, _responsive (+ index.scss entry)
+  styles/                  # global.scss (entry) + _variables, _fonts, _responsive partials
   data/                    # static JSON (photos.json)
   shared/hooks/            # hooks used by more than one feature (use-hover)
   features/
     <feature>/
       <feature>.tsx        # feature component
-      <feature>.scss       # feature styles
+      <feature>.module.scss # feature styles (CSS modules)
       hooks/               # feature hooks
       utils/
         types.ts

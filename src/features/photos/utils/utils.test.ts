@@ -1,4 +1,4 @@
-import { getGridClass } from './utils';
+import { getGridClass } from '@/features/photos/utils/utils';
 
 describe('getGridClass', () => {
   it.each([

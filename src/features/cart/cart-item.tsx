@@ -1,8 +1,9 @@
 import { useHover } from '@/shared/hooks/use-hover';
 import { useStore } from '@/features/store/hooks/use-store';
 import type { Photo } from '@/features/store/utils/types';
-import { ITEM_PRICE } from './utils/constants';
-import { formatPrice } from './utils/utils';
+import { ITEM_PRICE } from '@/features/cart/utils/constants';
+import { formatPrice } from '@/features/cart/utils/utils';
+import styles from '@/features/cart/cart.module.scss';
 
 type CartItemProps = {
   item: Photo;
@@ -12,10 +13,10 @@ export const CartItem = ({ item }: CartItemProps) => {
   const [hovered, ref] = useHover<HTMLElement>();
   const { removeFromCart } = useStore();
 
-  const iconClassName = hovered ? 'ri-delete-bin-fill' : 'ri-delete-bin-line';
+  const iconClassName = `${hovered ? 'ri-delete-bin-fill' : 'ri-delete-bin-line'} ${styles.deleteIcon}`;
 
   return (
-    <div className="cart-item">
+    <div className={styles.cartItem}>
       <i
         className={iconClassName}
         onClick={() => removeFromCart(item.id)}
